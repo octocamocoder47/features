@@ -1,0 +1,21 @@
+{
+    "id": "outagedeck",
+    "version": "1.0.0",
+    "name": "OutageDeck CLI (via GitHub Releases)",
+    "documentationURL": "https://github.com/devcontainers-extra/features/tree/main/src/outagedeck",
+    "description": "Check the live status of cloud and SaaS providers from a terminal or CI script.",
+    "options": {
+        "version": {
+            "default": "latest",
+            "description": "Select the OutageDeck CLI version to install.",
+            "proposals": [
+                "latest",
+                "0.1.0"
+            ],
+            "type": "string"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers-extra/features/gh-release"
+    ]
+}
