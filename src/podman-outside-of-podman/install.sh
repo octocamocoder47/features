@@ -65,12 +65,12 @@ install_podman_from_github() {
 
     local tmp_dir
     tmp_dir=$(mktemp -d)
-    local cleanup() {
+    cleanup() {
         rm -rf "$tmp_dir"
     }
     trap cleanup EXIT
 
-    local binary_name="podman-${os}_${arch}.tar.gz"
+    local binary_name="podman-remote-static-${os}_${arch}.tar.gz"
     local download_url="https://github.com/containers/podman/releases/download/v${version}/${binary_name}"
 
     echo "Downloading: $download_url"
@@ -80,7 +80,7 @@ install_podman_from_github() {
         tar -xzf "$tmp_dir/$binary_name" -C "$tmp_dir"
 
         local podman_bin
-        podman_bin=$(find "$tmp_dir" -name "podman" -type f 2>/dev/null | head -1)
+        podman_bin=$(find "$tmp_dir" -name "podman-remote-static-${os}_${arch}" -type f 2>/dev/null | head -1)
 
         if [ -n "$podman_bin" ] && [ -x "$podman_bin" ]; then
             mkdir -p /usr/local/bin
@@ -158,7 +158,6 @@ install_podman_zypper() {
 install_podman_deps_apt() {
     apt-get update -y
     apt-get install -y --no-install-recommends \
-        containers-common \
         conmon \
         crun \
         slirp4netns \
