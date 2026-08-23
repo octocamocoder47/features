@@ -41,7 +41,7 @@ then
 	# for latest we download the latest *release* version
 	DOWNLOAD_URL=$(curl -sSL $INDEX_URL | jq -r 'to_entries[0].value."'"$ARCH"'-linux".tarball')
 elif [[ "$ZIG_VERSION" == "stable" ]]; then
-	# for latest we download the latest *release* version
+	# for stable we download the latest stable release version
 	DOWNLOAD_URL=$(curl -sSL $INDEX_URL | jq -r 'to_entries[1].value."'"$ARCH"'-linux".tarball')
 else
 	DOWNLOAD_URL=$(curl -sSL $INDEX_URL | jq -r '."'"$ZIG_VERSION"'"."'"$ARCH"'-linux".tarball')
