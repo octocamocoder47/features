@@ -1,0 +1,16 @@
+{
+    "test_default": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "features": {
+            "outagedeck": {}
+        }
+    },
+    "test_specific_version": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "features": {
+            "outagedeck": {
+                "version": "0.1.0"
+            }
+        }
+    }
+}

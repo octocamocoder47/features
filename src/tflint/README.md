@@ -1,0 +1,24 @@
+
+# TFLint (via Github Releases) (tflint)
+
+TFLint is a framework and each feature is provided by plugins, the key features are as follows:
+
+- Find possible errors (like invalid instance types) for Major Cloud providers (AWS/Azure/GCP).
+- Warn about deprecated syntax, unused declarations.
+- Enforce best practices, naming conventions.
+
+## Example Usage
+
+```json
+"features": {
+    "ghcr.io/devcontainers-extra/features/tflint:1": {}
+}
+```
+
+## Options
+
+| Options Id | Description                    | Type   | Default Value |
+|------------|--------------------------------|--------|---------------|
+| version    | Select the version to install. | string | latest        |
+
+---

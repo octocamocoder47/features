@@ -1,0 +1,16 @@
+{
+    "test_default": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "features": {
+            "tflint": {}
+        }
+    },
+    "test_specific_version": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "features": {
+            "tflint": {
+                "version": "0.62.0"
+            }
+        }
+    }
+}
